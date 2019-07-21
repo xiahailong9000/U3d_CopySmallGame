@@ -24,7 +24,7 @@ obj/
 ProjectSettings/ProjectVersion.txt  
 Temp/
 Debug/
-Packages/
+#Packages/
 Logs/
 Assets/BuildReport/
 
