@@ -1,0 +1,15 @@
+{
+    "name": "CC_CopySmallGame.G01.Module",
+    "references": [
+        "CS_DLL",
+        "HotFix_DLL",
+        "UI02_View",
+        "CC_Composite.Part",
+        "CC_Composite.Object",
+        "CC_Composite.Module"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

@@ -1,4 +1,4 @@
-﻿using G01;
+﻿using CopySmallGame.G01;
 using UnityEngine;
 
 public class StartGame : MonoBehaviour {
@@ -7,7 +7,7 @@ public class StartGame : MonoBehaviour {
         //GameObject.DontDestroyOnLoad(gameObject);
         switch (gameIndex) {
             case 1:
-                C_G01Game.S_Start();
+                new C_G01Game().S_Start();
                 break;
             case 16:
           
