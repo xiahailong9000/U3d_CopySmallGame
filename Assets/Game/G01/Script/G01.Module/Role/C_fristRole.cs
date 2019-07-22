@@ -10,6 +10,7 @@ namespace CopySmallGame.G01.Module.Role {
         public C_Parameter parameter = new C_Parameter();
         public void S_Init() {
             C_MonoMonitor.GetInstance.S_UpdateEventAdd(0, S_Run);
+       
         }
         public void S_GameReset() {
             S_ResetRole();
@@ -24,6 +25,7 @@ namespace CopySmallGame.G01.Module.Role {
             role.S_Init(data);
 
             roleMotion.S_Init(C_ObjBase.mono, role.a2Root.transform, Camera.main);
+            roleMotion.S_Reborn();
         }
 
         public void S_GameStart() {
@@ -38,7 +40,11 @@ namespace CopySmallGame.G01.Module.Role {
             }
         }
         public void S_Jump() {
-            roleMotion.S_Jump(role.a2Root.transform.position+role.a2Root.transform.TransformDirection(0,0,10));
+            if (C_GameData.gameState != E_GameState.e02_GameRuning) {
+                return;
+            }
+            Vector3 targetPoint = role.a2Root.transform.position + role.a2Root.transform.TransformDirection(0, 0, 10);
+            roleMotion.S_Jump(targetPoint,0);
         }
         public class C_Parameter {
             public LongData currentUseRoleCfgId;

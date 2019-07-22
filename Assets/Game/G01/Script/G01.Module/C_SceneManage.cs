@@ -1,5 +1,6 @@
 ﻿using CC_Farm.Part;
 using CC_Game;
+using CC_Game.Part.Role;
 using CC_Util;
 using CopySmallGame.G01.Cfg.SceneAssets;
 using CopySmallGame.G01.Data;
@@ -11,13 +12,16 @@ namespace CopySmallGame.G01.Module {
         public C_DataManage dataManage = new C_DataManage();
         C_fristRole fristRole = new C_fristRole();
         C_PlayerInputControl playerInputControl = new C_PlayerInputControl();
+        C_CameraSurround cameraSurround = new C_CameraSurround();
         public void S_Init() {
             fristRole.parameter.currentUseRoleCfgId = dataManage.playerData.currentUseRoleCfgId;
             C_PlayerInputControl.C_Parameter.d_FingerLiftEvent = fristRole.S_Jump;
             fristRole.S_Init();
             playerInputControl.S_Init();
-            C_ObjBase.mono.S_Delayed(0.2f).d_EndEvent = delegate () {
-                S_GameReset();
+
+            cameraSurround.S_Init(C_ObjBase.mono);
+            C_RoleMotionControl.C_Parameter.d_SetCameraTarget = delegate (Vector3 targetPoint) {
+                cameraSurround.S_SetTarget(targetPoint);
             };
         }
         public void S_GameReset() {
