@@ -9,7 +9,7 @@ namespace CopySmallGame.G01.Module.Role {
         C_ObjBase role = new C_ObjBase();
         public C_Parameter parameter = new C_Parameter();
         public void S_Init() {
-
+            C_MonoMonitor.GetInstance.S_UpdateEventAdd(0, S_Run);
         }
         public void S_GameReset() {
             S_ResetRole();
@@ -31,6 +31,14 @@ namespace CopySmallGame.G01.Module.Role {
         }
         public void S_GameEnd() {
 
+        }
+        void S_Run() {
+            if (role.a2Root != null) {
+                roleMotion.S_RoleMotion(180, 0);
+            }
+        }
+        public void S_Jump() {
+            roleMotion.S_Jump(role.a2Root.transform.position+role.a2Root.transform.TransformDirection(0,0,10));
         }
         public class C_Parameter {
             public LongData currentUseRoleCfgId;

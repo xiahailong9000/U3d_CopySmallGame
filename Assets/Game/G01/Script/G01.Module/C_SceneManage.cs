@@ -10,8 +10,12 @@ namespace CopySmallGame.G01.Module {
     public class C_SceneManage {
         public C_DataManage dataManage = new C_DataManage();
         C_fristRole fristRole = new C_fristRole();
+        C_PlayerInputControl playerInputControl = new C_PlayerInputControl();
         public void S_Init() {
             fristRole.parameter.currentUseRoleCfgId = dataManage.playerData.currentUseRoleCfgId;
+            C_PlayerInputControl.C_Parameter.d_FingerLiftEvent = fristRole.S_Jump;
+            fristRole.S_Init();
+            playerInputControl.S_Init();
             C_ObjBase.mono.S_Delayed(0.2f).d_EndEvent = delegate () {
                 S_GameReset();
             };
