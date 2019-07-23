@@ -1,5 +1,6 @@
 ﻿using CC_Game;
 using UnityEngine;
+using CC_Util;
 namespace CopySmallGame.G01.Module.Role {
     /// <summary>
     /// 陷阱
@@ -28,7 +29,9 @@ namespace CopySmallGame.G01.Module.Role {
         }
 
         public override void S_Init1() {
-            
+            Collider collider = obj.a2Root.transform.GetComponentInChildren<Collider>();
+            collider.gameObject.AddComponent<C_Mono>();
+           
         }
         public override void S_Update() {
             obj.a2Root.transform.Translate(Vector3.forward * 10 * Time.deltaTime);
@@ -37,6 +40,18 @@ namespace CopySmallGame.G01.Module.Role {
     public class C_Trap_Data : C_PartDataBase {
         public override C_PartDataBase S_GetNewObj() {
             return new C_Trap_Data();
+        }
+    }
+
+
+    public class C_Mono:MonoBehaviour {
+        void OnTriggerEnter(Collider other) {// 当进入触发器
+            Debug.LogErrorFormat("进入碰撞____{0}", other.name);
+        }
+        void OnTriggerExit(Collider other) {// 当退出触发器
+        }
+        void OnTriggerStay(Collider other) {// 当逗留触发器
+
         }
     }
 }

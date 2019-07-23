@@ -10,7 +10,11 @@ namespace CopySmallGame.G01.Module.Role {
         public C_Parameter parameter = new C_Parameter();
         public void S_Init() {
             C_MonoMonitor.GetInstance.S_UpdateEventAdd(0, S_Run);
-            C_RoleMotionControl.C_Parameter.d_CollisionHitEvent = delegate (E_CollisionType type, RaycastHit hit) { };
+            C_RoleMotionControl.C_Parameter.d_CollisionHitEvent = delegate (E_CollisionType type, RaycastHit hit) {
+                if (type == E_CollisionType.e0_Pedal) {
+                    Debug.LogErrorFormat("_脚踏地面________________{0}", role.a2Root.transform.position.y);
+                }
+            };
         }
         public void S_GameReset() {
             S_ResetRole();
@@ -23,7 +27,7 @@ namespace CopySmallGame.G01.Module.Role {
             data.onlyAssetsPath =C_Int4.GetInt4(roleCfg.onlyAssetPath);
             data.originPosi = Vector3.zero;
             role.S_Init(data);
-
+            role.a2Root.o_rigidbody.useGravity = false;
             roleMotion.S_Init(C_ObjBase.mono, role.a2Root.transform, Camera.main);
             roleMotion.S_Reborn();
         }
