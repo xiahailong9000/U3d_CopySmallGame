@@ -11,14 +11,15 @@ namespace CopySmallGame.G01.Cfg.CheckPoint {
 	///<para></para>
  	/// </summary>
 	[Serializable]
-	public partial class Cfg_Monster:I_CfgBase{
+	public partial class Cfg_CheckPoint:I_CfgBase{
 
 
 		#region------声明变量------------------------------------------------
 		private int _id;//怪物属性表---()---
-		private string _constant22;//常量---()---
-		private string _name;//名称---()---
 		private int[] _onlyAssetPath;//唯一资源路径---()---
+		private int _cubeDirection;//方块方向---()---
+		private int _obstacleType;//障碍物类型---(0=普通障碍物 _ 1=火球)---
+		private float _RebornTime;//出生时间---()---
 
 		#endregion---声明变量----------------------------------------------
 
@@ -36,30 +37,39 @@ namespace CopySmallGame.G01.Cfg.CheckPoint {
 			}
 		}
 		/// <summary>
-		///constant22== 常量 
-		///<para></para>
-		/// </summary>
-		public string constant22{
-			get {
-				return _constant22;
-			}
-		}
-		/// <summary>
-		///name== 名称 
-		///<para></para>
-		/// </summary>
-		public string name{
-			get {
-				return _name;
-			}
-		}
-		/// <summary>
 		///onlyAssetPath== 唯一资源路径 
 		///<para></para>
 		/// </summary>
 		public int[] onlyAssetPath{
 			get {
 				return _onlyAssetPath;
+			}
+		}
+		/// <summary>
+		///cubeDirection== 方块方向 
+		///<para></para>
+		/// </summary>
+		public int cubeDirection{
+			get {
+				return _cubeDirection;
+			}
+		}
+		/// <summary>
+		///obstacleType== 障碍物类型 
+		///<para>0=普通障碍物 _ 1=火球</para>
+		/// </summary>
+		public int obstacleType{
+			get {
+				return _obstacleType;
+			}
+		}
+		/// <summary>
+		///RebornTime== 出生时间 
+		///<para></para>
+		/// </summary>
+		public float RebornTime{
+			get {
+				return _RebornTime;
 			}
 		}
 
@@ -89,27 +99,29 @@ namespace CopySmallGame.G01.Cfg.CheckPoint {
             for (int i = 0; i < sss0.Length; i++) {
                 string[] sss = sss0[i].Split('\t');
                 if (sss.Length < 2) {
-                    //UnityEngine.Debug.LogFormat(" Cfg_Monster_消息长度不在__{0}", sss0[i]);
+                    //UnityEngine.Debug.LogFormat(" Cfg_CheckPoint_消息长度不在__{0}", sss0[i]);
                     continue;
                 }
                 try {
-                    Cfg_Monster nn = new Cfg_Monster();
+                    Cfg_CheckPoint nn = new Cfg_CheckPoint();
 					nn._id = (int)C_Tool.S_GetValue("int",sss[0]);
-					nn._constant22 = (string)C_Tool.S_GetValue("string",sss[1]);
-					nn._name = (string)C_Tool.S_GetValue("string",sss[2]);
-					nn._onlyAssetPath = (int[])C_Tool.S_GetValue("int[]",sss[3]);
+					nn._onlyAssetPath = (int[])C_Tool.S_GetValue("int[]",sss[1]);
+					nn._cubeDirection = (int)C_Tool.S_GetValue("int",sss[2]);
+					nn._obstacleType = (int)C_Tool.S_GetValue("int",sss[3]);
+					nn._RebornTime = (float)C_Tool.S_GetValue("float",sss[4]);
 					dataDic[nn._id] = nn;
 				} catch (Exception ex) {
-					UnityEngine.Debug.LogErrorFormat("Cfg_Monster=怪物属性表_读取数据解析出错__目标长度={0}__当前长度 ={1}____{2}\n__{3}\n__{4}", 4, sss.Length-1, sss0[i],ex.Message, ex.StackTrace);
+					UnityEngine.Debug.LogErrorFormat("Cfg_CheckPoint=怪物属性表_读取数据解析出错__目标长度={0}__当前长度 ={1}____{2}\n__{3}\n__{4}", 5, sss.Length-1, sss0[i],ex.Message, ex.StackTrace);
 				}
 			}
 		}
-		public Cfg_Monster(){}
-		public Cfg_Monster(int id,string constant22,string name,int[] onlyAssetPath) {
+		public Cfg_CheckPoint(){}
+		public Cfg_CheckPoint(int id,int[] onlyAssetPath,int cubeDirection,int obstacleType,float RebornTime) {
 			this._id = id;
-			this._constant22 = constant22;
-			this._name = name;
 			this._onlyAssetPath = onlyAssetPath;
+			this._cubeDirection = cubeDirection;
+			this._obstacleType = obstacleType;
+			this._RebornTime = RebornTime;
 			dataDic[id] = this;
 		}
 
@@ -117,81 +129,51 @@ namespace CopySmallGame.G01.Cfg.CheckPoint {
 
 
 		#region------任意字符串字段查询-----------------------------------------------
-        static Dictionary<string, List<Cfg_Monster>> _constant22Dic = new Dictionary<string, List<Cfg_Monster>>();
-        public static List<Cfg_Monster> Get_constant22List(string key) {
-            if (_constant22Dic.Count == 0) {
-                var dic = GetDictionary().GetEnumerator();
-                while (dic.MoveNext()) {
-                    string[] sss = new string[]{dic.Current.Value._constant22};
-                    for (int i = 0; i < sss.Length; i++) {
-                        string key0 = sss[i].Trim();
-                        if (_constant22Dic.ContainsKey(key0) == false) {
-                            _constant22Dic[key0] = new List<Cfg_Monster>();
-                        }
-                        _constant22Dic[key0].Add(dic.Current.Value);
-                    }
-                }
-            }
-            if (_constant22Dic.ContainsKey(key)) {
-                return _constant22Dic[key];
-            } else {
-                return null;
-            }
-        }
-
-        static Dictionary<string, List<Cfg_Monster>> _nameDic = new Dictionary<string, List<Cfg_Monster>>();
-        public static List<Cfg_Monster> Get_nameList(string key) {
-            if (_nameDic.Count == 0) {
-                var dic = GetDictionary().GetEnumerator();
-                while (dic.MoveNext()) {
-                    string[] sss = new string[]{dic.Current.Value._name};
-                    for (int i = 0; i < sss.Length; i++) {
-                        string key0 = sss[i].Trim();
-                        if (_nameDic.ContainsKey(key0) == false) {
-                            _nameDic[key0] = new List<Cfg_Monster>();
-                        }
-                        _nameDic[key0].Add(dic.Current.Value);
-                    }
-                }
-            }
-            if (_nameDic.ContainsKey(key)) {
-                return _nameDic[key];
-            } else {
-                return null;
-            }
-        }
-
 		#endregion----任意字符串字段查询-----------------------------------------------
 
 
 
 
-		static Dictionary<int, Cfg_Monster> dataDic = new Dictionary<int, Cfg_Monster>();
-		public static Dictionary<int, Cfg_Monster> GetDictionary() {
+		static Dictionary<int, Cfg_CheckPoint> dataDic = new Dictionary<int, Cfg_CheckPoint>();
+		public static Dictionary<int, Cfg_CheckPoint> GetDictionary() {
             if (dataDic.Count>0) {
                 return dataDic;
             } else {
-				new Cfg_Monster(1,"月亮星空","月亮星空",new int[]{-1,25,1,0});
-				new Cfg_Monster(2,"月亮星空","月亮星空",new int[]{-1,25,1,0});
-				new Cfg_Monster(3,"月亮星空","月亮星空",new int[]{-1,25,1,0});
-				new Cfg_Monster(4,"月亮星空","月亮星空",new int[]{-1,25,1,0});
-				new Cfg_Monster(5,"月亮星空","月亮星空",new int[]{-1,25,1,0});
-				new Cfg_Monster(6,"月亮星空","月亮星空",new int[]{-1,25,1,0});
-				new Cfg_Monster(7,"月亮星空","月亮星空",new int[]{-1,25,1,0});
-				new Cfg_Monster(8,"月亮星空","月亮星空",new int[]{-1,25,1,0});
-				new Cfg_Monster(9,"月亮星空","月亮星空",new int[]{-1,25,1,0});
-				new Cfg_Monster(10,"月亮星空","月亮星空",new int[]{-1,25,1,0});
-				new Cfg_Monster(11,"月亮星空","月亮星空",new int[]{-1,25,1,0});
-				new Cfg_Monster(12,"月亮星空","月亮星空",new int[]{-1,25,1,0});
-				new Cfg_Monster(13,"月亮星空","月亮星空",new int[]{-1,25,1,0});
-				new Cfg_Monster(14,"月亮星空","月亮星空",new int[]{-1,25,1,0});
-				new Cfg_Monster(15,"月亮星空","月亮星空",new int[]{-1,25,1,0});
-				new Cfg_Monster(16,"月亮星空","月亮星空",new int[]{-1,25,1,0});
+				new Cfg_CheckPoint(1,new int[]{-1,12,1,0},90,0,2f);
+				new Cfg_CheckPoint(2,new int[]{-1,12,1,0},270,0,2f);
+				new Cfg_CheckPoint(3,new int[]{-1,12,1,0},90,0,2f);
+				new Cfg_CheckPoint(4,new int[]{-1,12,1,0},270,0,2f);
+				new Cfg_CheckPoint(5,new int[]{-1,12,1,0},90,0,2f);
+				new Cfg_CheckPoint(6,new int[]{-1,12,1,0},270,0,2f);
+				new Cfg_CheckPoint(7,new int[]{-1,12,1,0},90,0,2f);
+				new Cfg_CheckPoint(8,new int[]{-1,12,1,0},270,0,2f);
+				new Cfg_CheckPoint(9,new int[]{-1,12,1,0},90,0,2f);
+				new Cfg_CheckPoint(10,new int[]{-1,12,1,0},270,0,2f);
+				new Cfg_CheckPoint(11,new int[]{-1,12,1,0},90,0,2f);
+				new Cfg_CheckPoint(12,new int[]{-1,12,1,0},270,0,2f);
+				new Cfg_CheckPoint(13,new int[]{-1,12,1,0},90,0,2f);
+				new Cfg_CheckPoint(14,new int[]{-1,12,1,0},270,0,2f);
+				new Cfg_CheckPoint(15,new int[]{-1,12,1,0},90,0,2f);
+				new Cfg_CheckPoint(16,new int[]{-1,12,1,0},270,0,2f);
+				new Cfg_CheckPoint(17,new int[]{-1,12,1,0},90,0,2f);
+				new Cfg_CheckPoint(18,new int[]{-1,12,1,0},270,0,2f);
+				new Cfg_CheckPoint(19,new int[]{-1,12,1,0},90,0,2f);
+				new Cfg_CheckPoint(20,new int[]{-1,12,1,0},270,0,2f);
+				new Cfg_CheckPoint(21,new int[]{-1,12,1,0},90,0,2f);
+				new Cfg_CheckPoint(22,new int[]{-1,12,1,0},270,0,2f);
+				new Cfg_CheckPoint(23,new int[]{-1,12,1,0},90,0,2f);
+				new Cfg_CheckPoint(24,new int[]{-1,12,1,0},270,0,2f);
+				new Cfg_CheckPoint(25,new int[]{-1,12,1,0},90,0,2f);
+				new Cfg_CheckPoint(26,new int[]{-1,12,1,0},270,0,2f);
+				new Cfg_CheckPoint(27,new int[]{-1,12,1,0},90,0,2f);
+				new Cfg_CheckPoint(28,new int[]{-1,12,1,0},270,0,2f);
+				new Cfg_CheckPoint(29,new int[]{-1,12,1,0},90,0,2f);
+				new Cfg_CheckPoint(30,new int[]{-1,12,1,0},270,0,2f);
 				return dataDic;
 			}
 		}
 
-        public static Cfg_Monster GetConfig(int id) {
+        public static Cfg_CheckPoint GetConfig(int id) {
             if (GetDictionary().ContainsKey(id)) {
                return GetDictionary()[id];
             } else {

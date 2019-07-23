@@ -10,7 +10,7 @@ namespace CopySmallGame.G01.Module.Role {
         public C_Parameter parameter = new C_Parameter();
         public void S_Init() {
             C_MonoMonitor.GetInstance.S_UpdateEventAdd(0, S_Run);
-       
+            C_RoleMotionControl.C_Parameter.d_CollisionHitEvent = delegate (E_CollisionType type, RaycastHit hit) { };
         }
         public void S_GameReset() {
             S_ResetRole();

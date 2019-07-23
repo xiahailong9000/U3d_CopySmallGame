@@ -13,12 +13,13 @@ namespace CopySmallGame.G01.Module {
         C_fristRole fristRole = new C_fristRole();
         C_PlayerInputControl playerInputControl = new C_PlayerInputControl();
         C_CameraSurround cameraSurround = new C_CameraSurround();
+        C_TrapManage trapManage = new C_TrapManage();
         public void S_Init() {
             fristRole.parameter.currentUseRoleCfgId = dataManage.playerData.currentUseRoleCfgId;
             C_PlayerInputControl.C_Parameter.d_FingerLiftEvent = fristRole.S_Jump;
             fristRole.S_Init();
             playerInputControl.S_Init();
-
+            trapManage.S_Init();
             cameraSurround.S_Init(C_ObjBase.mono);
             C_RoleMotionControl.C_Parameter.d_SetCameraTarget = delegate (Vector3 targetPoint) {
                 cameraSurround.S_SetTarget(targetPoint);
@@ -27,13 +28,16 @@ namespace CopySmallGame.G01.Module {
         public void S_GameReset() {
             S_LoadScene();
             fristRole.S_GameReset();
+            trapManage.S_GameReset();
         }
 
         public void S_GameStart() {
-
+            fristRole.S_GameStart();
+            trapManage.S_GameStart((int)dataManage.playerData.playerGrade.Value);
         }
         public void S_GameEnd() {
-
+            fristRole.S_GameEnd();
+            trapManage.S_GameEnd();
         }
 
 
