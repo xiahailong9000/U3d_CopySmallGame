@@ -1,43 +1,73 @@
-%YAML 1.1
+﻿%YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - noui
+  - disc
+  - Rightdisc
+  - OragePos
+  - Undefined
+  - TempBall
+  - Effects
+  - dync
+  - End
+  - GameCtrl
+  - PanelView
+  - PanelProperty
+  - face
+  - pillar
+  - originPos
+  - white
+  - ss001
+  - ss002
+  - ss003
+  - fixedCanvas
+  - 
+  - 
+  -  
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - layer-3
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - layer-6
+  - layer-7
+  - layer-8
+  - layer-9
+  - layer-10
+  - layer-11
+  - layer-12
+  - layer-13
+  - layer-14
+  - layer-15
+  - layer-16
+  - layer-17
+  - layer-18
+  - layer-19
+  - layer-20
+  - layer-21
+  - layer-22
+  - layer-23
+  - layer-24
+  - layer-25
+  - layer-26
+  - layer-27
+  - layer-28
+  - layer-29
+  - layer-30
+  - layer-31
   m_SortingLayers:
   - name: Default
-    uniqueID: 0
-    locked: 0
+  uniqueID: 0
+  locked: 0
+  - name: ui01
+  uniqueID: 4136130969
+  locked: 0
+  - name: ui02
+  uniqueID: 874481161
+  locked: 0
+ 

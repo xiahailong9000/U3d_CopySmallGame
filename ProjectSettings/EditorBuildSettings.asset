@@ -4,5 +4,62 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/AppStartup.unity
+    guid: c43e5cc158a994e6ca63b42e95a1fcfd
+  - enabled: 1
+    path: Assets/Games/ResourcesAB/G07/Scene.07.Editor.unity
+    guid: ff061283317e7a74ba73a94d627427c0
+  - enabled: 1
+    path: Assets/Games/ResourcesAB/G08/G08.unity
+    guid: fabdc815317857b4f9ead9454a64a03c
+  - enabled: 1
+    path: Assets/Games/ResourcesAB/G10/Scene.10.Editor.unity
+    guid: a52704b53a14d354490e99752158de8e
+  - enabled: 1
+    path: Assets/Games/ResourcesAB/G11/G11.Editor.unity
+    guid: 5cd95621f1cafa245b7ae712881cb6da
+  - enabled: 1
+    path: Assets/Games/ResourcesAB/test/test.editor.01.unity
+    guid: bc0b1371b2092704f8d86b17a9842a0c
+  - enabled: 1
+    path: Assets/Art/Model/Traps-Obstacles/DemoScenes/DemoScenes.unity
+    guid: e396ff6afd77bb144b796c5381fedf31
+  - enabled: 1
+    path: Assets/Games/ResourcesAB/G01/Scene/Farm.G01Main.unity
+    guid: ea9ee86fe804c334a8fb9494e1191a18
+  - enabled: 1
+    path: Assets/Games/ResourcesAB/G02/Scene/Farm.G02Main.unity
+    guid: 63287d5d659ef304cb20bd4a78f958d1
+  - enabled: 1
+    path: Assets/Games/ResourcesAB/G03/Scene/G03_EditorScene.unity
+    guid: afc400cff780668408e6abad2c371b7a
+  - enabled: 1
+    path: Assets/Games/ResourcesAB/G04/Scene/G04Main.unity
+    guid: e90ac84b853014d49a1b6db316d10539
+  - enabled: 1
+    path: Assets/Games/ResourcesAB/G06/Scene/G06Main.unity
+    guid: af1862a66db4d4d0997af512063883c3
+  - enabled: 1
+    path: Assets/Games/ResourcesAB/G11/Scene/test_Scene011.unity
+    guid: 5d23e761f88c15c4b96579ce3b3f12c0
+  - enabled: 1
+    path: Packages/com.u3d.halo-island/ResourcesAB/Halo-Island/Scenes/CB6Main.unity
+    guid: d03036a924fd04d8b96b1d4e01ed8a1f
+  - enabled: 1
+    path: Packages/com.u3d.halo-island/ResourcesAB/Halo-Island/Scenes/CrowdBattle_Adventure01.unity
+    guid: bf6dddd5c18e24b2982de48b44d7bf24
+  - enabled: 1
+    path: Packages/com.u3d.halo-island/ResourcesAB/Halo-Island/Scenes/CrowdBattle_Barrier.unity
+    guid: 21025cc8c547f4df9a71f69995cda19d
+  - enabled: 1
+    path: Packages/com.u3d.halo-island/ResourcesAB/Halo-Island/Scenes/CrowdBattle_Battle01.unity
+    guid: 79b7846966ea7492fa1bcd03ff14cc21
+  - enabled: 1
+    path: Packages/com.u3d.halo-island/ResourcesAB/Halo-Island/Scenes/CrowdBattle_Home.unity
+    guid: 6125d4e2f4ecc48d99926c6a401cbdbb
+  - enabled: 1
+    path: Packages/com.u3d.halo-island/ResourcesAB/Halo-Island/Scenes/CrowdBattle_test.unity
+    guid: 5ad4b48efc37044dabebf162693909fa
   m_configObjects: {}

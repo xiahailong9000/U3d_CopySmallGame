@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e189374413a3f00468e49d51d8b27a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enable: 1
+  useGlobalIl2cpp: 0
+  hybridclrRepoURL: https://gitee.com/focus-creative-games/hybridclr
+  il2cppPlusRepoURL: https://gitee.com/focus-creative-games/il2cpp_plus
+  hotUpdateAssemblyDefinitions:
+  - {fileID: 5897886265953266890, guid: 7d44b1e79ae8d45639691c24deb473cc, type: 3}
+  - {fileID: 5897886265953266890, guid: 8ebd0a18ae7694129b5ec3cb94351fed, type: 3}
+  - {fileID: 5897886265953266890, guid: a7b3cd41af8264b529d5b3dae122eaac, type: 3}
+  - {fileID: 5897886265953266890, guid: 58a612d35a6554becb2da5e21842b9af, type: 3}
+  - {fileID: 5897886265953266890, guid: 0727a5108d2374e32bd9acd27e9c4ed6, type: 3}
+  - {fileID: 5897886265953266890, guid: 33214a8cf69e74c4ba0b2e8923fd6c88, type: 3}
+  - {fileID: 5897886265953266890, guid: 98754acc97b4c4f3ca4e2cedf1433a5e, type: 3}
+  - {fileID: 5897886265953266890, guid: 1ff688d9a6ccffc4b833961b232a498c, type: 3}
+  - {fileID: 5897886265953266890, guid: e1427a96fde7648478af0c1d40f207fe, type: 3}
+  - {fileID: 5897886265953266890, guid: a38e0d47deeec44ceb02e6c73e2215d5, type: 3}
+  - {fileID: 5897886265953266890, guid: d71636f35c4f06c409b8debf47c4b6c4, type: 3}
+  - {fileID: 5897886265953266890, guid: 50956f3dd4d3199429afb26368301a49, type: 3}
+  - {fileID: 5897886265953266890, guid: c1d9b2563f9718d46954366d0b0f3d24, type: 3}
+  - {fileID: 5897886265953266890, guid: a4cc64751295b71488c74a294fc206d4, type: 3}
+  - {fileID: 5897886265953266890, guid: a4bff84147866ba46a7e62f4f8eb308e, type: 3}
+  - {fileID: 5897886265953266890, guid: d4d5b321b1564734eb48c4a26ce713f2, type: 3}
+  - {fileID: 5897886265953266890, guid: 15bcbaec5fb0169428fd3313adce3e84, type: 3}
+  - {fileID: 5897886265953266890, guid: 95096c043c2f1c94a893a41230ecbb80, type: 3}
+  - {fileID: 5897886265953266890, guid: 2f8f6ce5c6217c241a19dbbe6ab6005a, type: 3}
+  - {fileID: 5897886265953266890, guid: 3fb09219ecae962488b6e831ed3b36f1, type: 3}
+  - {fileID: 5897886265953266890, guid: 95222587317cdfc4dabfa0273dfbcb6d, type: 3}
+  - {fileID: 5897886265953266890, guid: e99f7e197be065f45be962366ca2816e, type: 3}
+  - {fileID: 5897886265953266890, guid: e4a786dba9553784689543cbc0352237, type: 3}
+  - {fileID: 5897886265953266890, guid: 30b3fd2b4db72194cba85a4906a11251, type: 3}
+  - {fileID: 5897886265953266890, guid: 9f76123ae4417f24987c5bb108490423, type: 3}
+  - {fileID: 5897886265953266890, guid: 27296d0c179571543827c6f7edc637eb, type: 3}
+  - {fileID: 5897886265953266890, guid: ce4c024a03b982e4793a40f6ae0b40d3, type: 3}
+  - {fileID: 5897886265953266890, guid: 8634a0a55998f4a6797612467891bc2d, type: 3}
+  - {fileID: 5897886265953266890, guid: af0ce5dd1ca4d6d41bf53d364bbee0d0, type: 3}
+  hotUpdateAssemblies: []
+  preserveHotUpdateAssemblies: []
+  hotUpdateDllCompileOutputRootDir: HybridCLRData/HotUpdateDlls
+  externalHotUpdateAssembliyDirs: []
+  strippedAOTDllOutputRootDir: HybridCLRData/AssembliesPostIl2CppStrip
+  patchAOTAssemblies:
+  - mscorlib
+  - System
+  - System.Core
+  - DOTween
+  - Nebukam.Common
+  - Newtonsoft.Json
+  - UnityEngine.AndroidJNIModule
+  - UnityEngine.AssetBundleModule
+  - UnityEngine.CoreModule
+  - UnityEngine.JSONSerializeModule
+  - UnityEngine.Purchasing
+  - zxing.unity
+  outputLinkFile: HybridCLRData/Generated/link.xml
+  outputAOTGenericReferenceFile: HybridCLRData/Generated/AOTGenericReferences.cs
+  maxGenericReferenceIteration: 10
+  maxMethodBridgeGenericIteration: 10
+  enableProfilerInReleaseBuild: 0
+  enableStraceTraceInWebGLReleaseBuild: 0
