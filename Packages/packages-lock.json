@@ -1,5 +1,18 @@
 {
   "dependencies": {
+    "com.code-philosophy.hybridclr": {
+      "version": "https://gitee.com/focus-creative-games/hybridclr_unity.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "4d0fef095b5af314b06e204ea0f6c17681f3ec3c"
+    },
+    "com.u3d.unity-common": {
+      "version": "file:../../../unity3d/U3d_Packages/Assets/UnityCommon",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.nuget.newtonsoft-json": {
       "version": "3.2.1",
       "depth": 2,
@@ -47,6 +60,14 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "com.xia9000.art02": {
+      "version": "file:../../../unity3d/U3d_Packages/Assets/Art02_LowPoly",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.xia9000.u3dcore": "0.1.0"
+      }
+    },
     "com.xia9000.art05": {
       "version": "file:../../../unity3d/U3d_Packages/Assets/Art05_Cartoon",
       "depth": 0,
@@ -69,6 +90,12 @@
         "com.xia9000.cs_dll": "0.1.0"
       }
     },
+    "com.xia9000.u3dcore": {
+      "version": "file:../../../unity3d/U3d_Packages/Assets/U3dCore",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.xia9000.ui02": {
       "version": "file:../../../U3d_Obl/U3d_Packages/Assets/UI02_View",
       "depth": 0,
@@ -86,7 +113,7 @@
     },
     "com.unity.modules.androidjni": {
       "version": "1.0.0",
-      "depth": 1,
+      "depth": 0,
       "source": "builtin",
       "dependencies": {}
     },

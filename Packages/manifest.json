@@ -1,13 +1,17 @@
 {
   "dependencies": {
+    "com.code-philosophy.hybridclr": "https://gitee.com/focus-creative-games/hybridclr_unity.git",
+    "com.u3d.unity-common": "file:../../../unity3d/U3d_Packages/Assets/UnityCommon",
+    "com.xia9000.u3dcore": "file:../../../unity3d/U3d_Packages/Assets/U3dCore",
     "com.unity.package-manager-ui": "1.9.11",
     "com.unity.purchasing": "4.11.0",
-    "com.xia9000.art02": "file:../../../unity3d/U3d_Packages/Assets/Art02",
+    "com.xia9000.art02": "file:../../../unity3d/U3d_Packages/Assets/Art02_LowPoly",
     "com.xia9000.art05": "file:../../../unity3d/U3d_Packages/Assets/Art05_Cartoon",
     "com.xia9000.cs_dll": "file:../../../U3d_Obl/U3d_Packages/Assets/CS_DLL",
     "com.xia9000.hotfix-dll": "file:../../../U3d_Obl/U3d_Packages/Assets/HotFix_DLL",
     "com.xia9000.ui02": "file:../../../U3d_Obl/U3d_Packages/Assets/UI02_View",
     "com.unity.modules.ai": "1.0.0",
+    "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
     "com.unity.modules.assetbundle": "1.0.0",
     "com.unity.modules.audio": "1.0.0",
